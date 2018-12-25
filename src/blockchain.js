@@ -25,15 +25,14 @@
 // node.js  自带的库用来计算hash
 const crypto = require('crypto')
 // 创世区块
-const initBlock = 
-    {
-        index: 0,
-        data: 'Hello mac-chain!',
-        prevHash: '0',
-        timestamp: 1545557384991,
-        nonce: 4957,
-        hash: '000055c4ba59a27a8024520b41059e1028fc6dfebd424552577d1ad6aecefa78'
-    }
+const initBlock = {
+  index: 0,
+  data: 'Hello mac-chain!',
+  prevHash: '0',
+  timestamp: 1545557384991,
+  nonce: 4957,
+  hash: '000055c4ba59a27a8024520b41059e1028fc6dfebd424552577d1ad6aecefa78'
+}
 
 class Blockchain {
   constructor() {
@@ -43,9 +42,9 @@ class Blockchain {
     //   const hash = this.computeHash(0, '0', 1545557384991, 'Hello mac-chain!', 1)
     // console.log(hash);
   }
-// 获得最新区块
-  getLastBlock(){
-    return this.blockchain[this.blockchain.length-1]
+  // 获得最新区块
+  getLastBlock() {
+    return this.blockchain[this.blockchain.length - 1]
   }
 
   // 挖矿
@@ -63,13 +62,13 @@ class Blockchain {
       nonce += 1
       hash = this.computeHash(index, prevHash, timestamp, data, nonce)
     }
-    console.log('mine over',{
-        index,
-        data,
-        prevHash,
-        timestamp,
-        nonce,
-        hash
+    console.log('mine over', {
+      index,
+      data,
+      prevHash,
+      timestamp,
+      nonce,
+      hash
     })
   }
   // 生成新区块
